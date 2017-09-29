@@ -1,7 +1,11 @@
 def getName():
-  name = str(input("What is your name?"))
+  name = raw_input("What is your name?")
   print name
   return name
 
+def shutUpForsyth():
+  print "*BOOM!*\nPYYTHOONN?!?!?!?!"
+
 if (getName() == "Python"):
   print "Python, get over here! We need your help!!"
+  shutUpForsyth()
