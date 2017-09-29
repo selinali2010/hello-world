@@ -5,6 +5,7 @@
 using namespace std;
 
 string getSecret(){
+//enables a random secret each round
   srand((int)time(0));
 
   string secret = "";
@@ -13,7 +14,7 @@ string getSecret(){
   }
   return secret;
 }
-
+//recieves user input for their guesses
 string getGuess(){
   string temp;
 
@@ -27,6 +28,7 @@ string getGuess(){
   return temp;
 }
 
+//checks for if the guess is correct
 string check(string guess, string secret) {
   for (int x = 0; x < 5; x++) {
     if (secret.at(x) == guess.at(x)) {
@@ -58,7 +60,7 @@ int main(){
   secret = getSecret();
 
   cout << "Enter a guess" << endl;
-
+  //player continues to guess until they a) run out of chances b) are correct
   do {
     guess = getGuess();
 
@@ -67,6 +69,7 @@ int main(){
     count++;
   } while (count < 5 and check(guess, secret) != "*****");
 
+  //if the player runs out of guesses
   if (count == 5) {
     cout << "Sorry, the answer was " << secret << endl;
   } else {
